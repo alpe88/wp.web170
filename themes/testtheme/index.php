@@ -38,8 +38,8 @@
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav">
-					<li class=""><a href="home.html" title="Welcome to tha! #TRUTH">Home</a></li>
-					<li class="active"><a href="main.html" title="Learn about me! #REAL">About</a></li>
+					<li class="active"><a href="" title="Welcome to tha! #TRUTH">Home</a></li>
+					<li class=""><a href="" title="Learn about me! #REAL">About</a></li>
 				</ul>			
 			</div>
 		</div>
@@ -55,15 +55,15 @@
 	<div id="" class="flexslider" style="margin-top:2em;">
 		<ul class="slides">
 			<li>
-				<img class="" src="images/slideOne.png" />
+				<img class="" src="<?php bloginfo('template_directory');?>/images/slideOne.png" />
 				<span class="text-overlay flex-caption"~~>spanning vast distances...</span>
 			</li>
 			<li>
-				<img src="images/slideTwo.png" />
+				<img src="<?php bloginfo('template_directory');?>/images/slideTwo.png" />
 				<span class="text-overlay flex-caption">~~>with grand horizons...</span>
 			</li>
 			<li>
-				<img src="images/slideThree.png" />
+				<img src="<?php bloginfo('template_directory');?>/images/slideThree.png" />
 				<span class="text-overlay flex-caption">~~>on my super sayan s#!7.</span>
 			</li>
 		</ul>
@@ -82,34 +82,22 @@
 			<div class="row">
 				<div class="col-lg-12 col-xs-12">
 					<div class="row" id="grid">
-						<div class="col-md-1 col-xs-4"><a class="" href="home.html" title="~>back to Home"><img src="images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
-						<div class="col-md-1 col-xs-4"><a class="" href="main.html" title="~>to About Me"><img src="images/icons/empty-my-world.png" class="img-thumbnail img-responsive" /></a></div> 
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-mail.png" class="img-thumbnail img-responsive" /></a></div> 
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/brain.png" class="img-thumbnail img-responsive" /></a></div>  
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-clock-logo.png" class="img-thumbnail img-responsive" /></a></div> 
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-google-logo.png" class="img-thumbnail img-responsive" /></a></div> 
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-linkedin-logo-square2.png" class="img-thumbnail img-responsive" /></a></div>  
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-instagram-logo.png" class="img-thumbnail img-responsive" /></a></div> 
-						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="images/icons/empty-settings.png" class="img-thumbnail img-responsive" /></a></div>
+						<div class="col-md-1 col-xs-4"><a class="" href="" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
+						<div class="col-md-1 col-xs-4"><a class="" href="" title="~>to About Me"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-my-world.png" class="img-thumbnail img-responsive" /></a></div> 
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-mail.png" class="img-thumbnail img-responsive" /></a></div> 
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/brain.png" class="img-thumbnail img-responsive" /></a></div>  
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-clock-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-google-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-linkedin-logo-square2.png" class="img-thumbnail img-responsive" /></a></div>  
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-instagram-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-settings.png" class="img-thumbnail img-responsive" /></a></div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-xs-12">
-					<div id="loadedContent">
-					<div class="panel panel-default flex-col">
-							<div class="panel-heading"><h1 class="label label-primary">I am Aleksandar Petrovic...</h1></div>
-						<div class="panel-body flex-grow">
-							<div class="col-xs-6 col-lg-6">
-								<img class="img-responsive img-thumbnail icon" src="images/in-mirror.png" alt="check out an image of me!" />
-							</div>
-							<div class="col-xs-6 col-lg-6">
-								<p class="text-center">Hodor, HODOR hodor, hodor hodor, hodor. Hodor hodor - hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor hodor hodor... Hodor hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor hodor hodor - hodor. Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor; hodor hodor hodor hodor, hodor. Hodor HODOR hodor, hodor hodor? </p>
-							</div>
-						</div>
-						<div class="panel-footer"><h2 class="label label-primary">..true story!</h2></div> 
-					</div>
+					<div id="loadedContent"><!-- Content from the 'pages' directory will be loaded here--></div>
 				</div>
 			</div>
 		</div>
@@ -128,12 +116,12 @@
 
 	<!-- Begin Scripts -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-   	<script src="js/bootswatch.js"></script>
-	<script src="js/ajaxlinks.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
+   	<script src="<?php bloginfo('template_directory');?>/js/bootswatch.js"></script>
+	<script src="<?php bloginfo('template_directory');?>/js/ajaxlinks.js"></script>
 	
 	<!-- FlexSlider -->
-  	<script src="flexslider/jquery.flexslider-min.js"></script>
+  	<script src="<?php bloginfo('template_directory');?>/flexslider/jquery.flexslider-min.js"></script>
 
   	<script type="text/javascript">
 		$( document ).ready(function() {
@@ -149,4 +137,3 @@
 	</script>
 </body>
 </html>
-          

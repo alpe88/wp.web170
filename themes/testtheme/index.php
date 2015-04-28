@@ -13,11 +13,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
 
 	<!-- Begin Style Sheets -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>" type="text/css">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/bootswatch.min.css" type="text/css">
-	<link rel="stylesheet" href="css/nrmlze.css" type="text/css">
-	<link rel="stylesheet" href="flexslider/flexslider.css" type="text/css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/style.css" type="text/css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootswatch.min.css" type="text/css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/nrmlze.css" type="text/css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider/flexslider.css" type="text/css">
 	
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

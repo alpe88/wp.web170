@@ -22,7 +22,7 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	<?php wp_head(); ?>
+	
 	</head>
 
 	<body <?php body_class(); ?> class="nopadding" >
@@ -39,8 +39,19 @@
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="" title="Welcome to tha! #TRUTH">Home</a></li>
-					<li class=""><a href="" title="Learn about me! #REAL">About</a></li>
+					<?php wp_nav_menu(
+						array( 
+							'theme_location' => 'main_menu',
+							'menu'           => 'Main Menu',
+						 	'container'      => '', 
+						 	'container_id'   => '',
+			 			 	'container_class'=> '',
+							'menu_id'        => '',
+							'menu_class'     => '',
+							'items_wrap'     => '%3$s',
+							)
+						);
+					?>
 				</ul>			
 			</div>
 		</div>
@@ -56,7 +67,7 @@
 	<div id="" class="flexslider" style="margin-top:2em;">
 		<ul class="slides">
 			<li>
-				<img class="" src="<?php bloginfo('template_directory');?>/images/slideOne.png" />
+				<img src="<?php bloginfo('template_directory');?>/images/slideOne.png" />
 				<span class="text-overlay flex-caption"~~>spanning vast distances...</span>
 			</li>
 			<li>

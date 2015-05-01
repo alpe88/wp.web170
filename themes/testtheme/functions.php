@@ -22,4 +22,7 @@ register_sidebar(array(
 	'before_title' => '<h2>',
 	'after_title' => '</h2>',
 ));
+
+show_admin_bar(true);
+
 ?>

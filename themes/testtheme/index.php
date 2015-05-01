@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
 
 	<!-- Begin Style Sheets -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/style.css" type="text/css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootswatch.min.css" type="text/css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/nrmlze.css" type="text/css">
@@ -22,10 +22,11 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		
+	<?php wp_head(); ?>
 	</head>
 
-	<body class="nopadding">
+	<body <?php body_class(); ?> class="nopadding" >
+	
 	<div class="navbar transparent navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -82,7 +83,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-xs-12">
 					<div class="row" id="grid">
-						<div class="col-md-1 col-xs-4"><a class="" href="" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
+						<div class="col-md-1 col-xs-4"><a class="" href="../wordpress/" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
 						<div class="col-md-1 col-xs-4"><a class="" href="" title="~>to About Me"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-my-world.png" class="img-thumbnail img-responsive" /></a></div> 
 						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/empty-mail.png" class="img-thumbnail img-responsive" /></a></div> 
 						<div class="col-md-1 col-xs-4"><a class="" href=""><img src="<?php bloginfo('template_directory');?>/images/icons/brain.png" class="img-thumbnail img-responsive" /></a></div>  
@@ -97,7 +98,12 @@
 			
 			<div class="row">
 				<div class="col-xs-12">
-					<div id="loadedContent"><!-- Content from the 'pages' directory will be loaded here--></div>
+					<div id="loadedContent"><!-- Content from the 'pages' directory will be loaded here-->
+						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //start the loop ?>
+						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); //get the page or posting title ?></a></h1>
+						<?php the_content(''); //get page or posting written content ?>
+						<?php endwhile; endif; //end the loop ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -135,5 +141,6 @@
 			});
 		});
 	</script>
+<?php wp_footer(); ?>
 </body>
 </html>

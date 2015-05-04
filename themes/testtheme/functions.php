@@ -23,6 +23,11 @@ register_sidebar(array(
 	'after_title' => '</h2>',
 ));
 
-show_admin_bar(true);
+#admin bar toggle
+if( !is_super_admin() ) {
+show_admin_bar(false);
+}else{show_admin_bar(true);}
 
+#custom walker include
+require_once('DD_Walker.php');
 ?>

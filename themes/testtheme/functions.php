@@ -24,7 +24,6 @@ register_sidebar(array(
 ));
 
 #admin bar toggle
-
 if( !is_super_admin() ) {
 show_admin_bar(false);
 }else{show_admin_bar(true);}

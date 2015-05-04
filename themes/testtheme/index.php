@@ -25,7 +25,7 @@
 	
 	</head>
 
-	<body <?php body_class(); ?> class="nopadding" >
+	<body <?php body_class() ." nopadding "; ?> >
 	
 	<div class="navbar transparent navbar-default navbar-fixed-top">
 		<div class="container">
@@ -43,12 +43,15 @@
 						array( 
 							'theme_location' => 'main_menu',
 							'menu'           => 'Main Menu',
+							'depth'          => '2',
 						 	'container'      => '', 
 						 	'container_id'   => '',
 			 			 	'container_class'=> '',
 							'menu_id'        => '',
 							'menu_class'     => '',
 							'items_wrap'     => '%3$s',
+							'fallback_cb'	 => '',
+							'walker'         => new DD_Walker(),
 							)
 						);
 					?>

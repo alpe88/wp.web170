@@ -23,8 +23,13 @@ register_sidebar(array(
 	'after_title' => '</h2>',
 ));
 
-#admin bar toggle
+#for post thumbnail images
+add_theme_support( 'post-thumbnails' );
 
+#for post text excerpts
+add_post_type_support( 'page', 'excerpt' );
+
+#admin bar toggle
 if( !is_super_admin() ) {
 show_admin_bar(false);
 }else{show_admin_bar(true);}

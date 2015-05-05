@@ -112,17 +112,19 @@
 			
 			<div class="row">
 				<div class="col-xs-12">
-					<div id="loadedContent"><!-- Content from the 'pages' directory will be loaded here-->
+					<div id="loadedContent"><!-- Content will be loaded here-->
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //start the loop ?>
-						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); //get the page or posting title ?></a></h1>
-						<?php the_content(''); //get page or posting written content ?>
-						<?php endwhile; endif; //end the loop ?>
-					</div>
+						<?php #the following snippet will display the link, the thumbnail and title.
+						      #Still needs: conditionals to check for post vs. page to display differently accordingly. ?>
+						<h1><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail' );?><?php the_title(); ?></a></h1>
+						<?php echo the_excerpt(); ?>
+						<?php the_content(''); #gets content ?>
+						<?php endwhile; endif; #end loop ?>
+    				</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </div>
 
 <hr />
@@ -136,7 +138,7 @@
 
 	<!-- Begin Scripts -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
+    	<script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
    	<script src="<?php bloginfo('template_directory');?>/js/bootswatch.js"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/ajaxlinks.js"></script>
 	

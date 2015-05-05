@@ -27,7 +27,7 @@
 
 	<body <?php body_class() ." nopadding "; ?> >
 	
-	<div class="navbar transparent navbar-default navbar-fixed-top">
+	<div id="nav_wrap" class="navbar transparent navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<a href="" class="navbar-brand">..when air takes breath</a>
@@ -152,6 +152,11 @@
 			});
 			$('div a img').each(function(){
 				$(this).hover(function(){$(this).addClass("highlight");},function(){$(this).removeClass("highlight");});
+			});
+		       $(window).scroll(function (event) {
+    				var y = $(this).scrollTop();
+    				if(y > 0){ $('#nav_wrap').slideUp(100); } 
+    				else{ $('#nav_wrap').slideDown(100); }
 			});
 		});
 	</script>

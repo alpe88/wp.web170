@@ -1,71 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<!-- Begin Meta Information -->
-	<title>~~>a humbly amazing portfolio</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<meta name="description" content="an Aleksandar Petrovic site" />
-	<meta name="keywords" content="portfolio site, aleksandar, petrovic, doing it big" />
-	<meta name="robots" content="no index, no follow" />
-	<meta http-equiv="Cache-Control" content="no-cache" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+<?php get_header(); ?>
+<!-- header.php ends here -->
 
-	<!-- Begin Style Sheets -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootswatch.min.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/nrmlze.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider/flexslider.css" type="text/css">
-	
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	
-	</head>
-
-	<body <?php body_class() ." nopadding "; ?> >
-	
-	<div id="nav_wrap" class="navbar transparent navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a href="" class="navbar-brand">..when air takes breath</a>
-					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-			</div>
-			<div class="navbar-collapse collapse" id="navbar-main">
-				<ul class="nav navbar-nav">
-					<?php wp_nav_menu(
-						array( 
-							'theme_location' => 'main_menu',
-							'menu'           => 'Main Menu',
-							'depth'          => '2',
-						 	'container'      => '', 
-						 	'container_id'   => '',
-			 			 	'container_class'=> '',
-							'menu_id'        => '',
-							'menu_class'     => '',
-							'items_wrap'     => '%3$s',
-							'fallback_cb'	 => '',
-							'walker'         => new DD_Walker(),
-							)
-						);
-					?>
-				</ul>			
-			</div>
-		</div>
-	</div>
-	<!--feedback control-->
-    <div class="container" style="margin-top:.5em;">
-		<div class="row">
-			<div class="col-xs-12 col-lg-12"></div>
-		</div>
-	</div>
-	<!--feedback control-->
+<!-- content -->
 <div class="nopadding jumbotron">
 	<div id="" class="flexslider" style="margin-top:2em;">
 		<ul class="slides">
@@ -109,59 +45,52 @@
 					</div>
 				</div>
 			</div>
-			
+			<!-- Main Content Section Begins Here -->
 			<div class="row">
-				<div class="col-xs-12">
-					<div id="loadedContent"><!-- Content will be loaded here-->
-						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //start the loop ?>
-						<?php #the following snippet will display the link, the thumbnail and title.
-						      #Still needs: conditionals to check for post vs. page to display differently accordingly. ?>
-						<h1><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail' );?><?php the_title(); ?></a></h1>
-						<?php echo the_excerpt(); ?>
-						<?php the_content(''); #gets content ?>
-						<?php endwhile; endif; #end loop ?>
-    				</div>
-				</div>
+				<div class="col-xs-12 col-lg-12">
+				
+					<div id="loadedContent" class="col-xs-12 col-md-8"><!-- Content will be loaded here -->
+						<?php if(have_posts()) : while(have_posts()) : the_post(); #begins the WP Loop ?>
+						<?php if(is_front_page() && is_home()){#when default home page ?>
+						<?php			the_content(); #display page content ?>
+						<?php	 }elseif (is_front_page()){#when static home page ?>
+										<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+										<?php the_content(); #display page content ?>
+						<?php	 }elseif (is_home()){#blog posts page as set up in Settings>>Reading ?>
+										<article id="post-excerpt-<?php the_ID(); ?>" class="post-excerpt">
+														<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+														<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>
+														in <?php the_category(', '); #list of categories ?></small>
+														<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'thumbnail' ); #featured image ?></a>
+														<?php the_excerpt(); #the excerpt of the post ?>
+														<p class="read-more">
+															<a href="<?php the_permalink(); #link to post, used to show full post ?>">Read More &raquo;</a>
+														</p>
+											</article>
+						<?php	 }else {#all other pages ?>
+										<article id="post-excerpt-<?php the_ID(); ?>" class="post-excerpt">
+														<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+														<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>
+														in <?php the_category(', '); #list of categories ?></small>
+														<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'thumbnail' ); #featured image ?></a>
+														<?php the_content(); #the excerpt of the post ?>
+														<p class="read-more">
+															<a href="../blog/">Back to Blog</a>
+														</p>
+										</article>
+						<?php	 } ?>
+						<?php endwhile; endif; #end of The Loop ?>
+					</div>
+					<div id="sidebar" class="col-md-4 hidden-xs"><!-- Sidebar will be loaded here -->
+					
+					</div>
+					<!-- Main Content Section Ends Here -->
+    			</div>
 			</div>
 		</div>
 	</div>
 </div>
+<!-- content -->
 
-<hr />
-<div class="container">
-	<div class="row">
-			<div class="col-xs-10 col-lg-10">
-					<a href="" class="btn-xs">an aleksandar petrovic site&nbsp&copy; 2015</a>
-			</div>
-	</div>
-</div>	
-
-	<!-- Begin Scripts -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    	<script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
-   	<script src="<?php bloginfo('template_directory');?>/js/bootswatch.js"></script>
-	<script src="<?php bloginfo('template_directory');?>/js/ajaxlinks.js"></script>
-	
-	<!-- FlexSlider -->
-  	<script src="<?php bloginfo('template_directory');?>/flexslider/jquery.flexslider-min.js"></script>
-
-  	<script type="text/javascript">
-		$( document ).ready(function() {
-			$('.flexslider').flexslider({
-				animation: "fade",
-				controlNav: false,
-				directionNav: false
-			});
-			$('div a img').each(function(){
-				$(this).hover(function(){$(this).addClass("highlight");},function(){$(this).removeClass("highlight");});
-			});
-		       $(window).scroll(function (event) {
-    				var y = $(this).scrollTop();
-    				if(y > 0){ $('#nav_wrap').slideUp(100); } 
-    				else{ $('#nav_wrap').slideDown(100); }
-			});
-		});
-	</script>
-<?php wp_footer(); ?>
-</body>
-</html>
+<!-- footer.php begins here -->
+<?php get_footer(); ?>

@@ -94,8 +94,9 @@
 					<!-- Main Content Section Ends Here -->
     			</div>
 			</div>
-		</div><small>index.php</small>
+		</div>
 	</div>
+<small>page.php</small>
 </div>
 <!-- Content -->
 

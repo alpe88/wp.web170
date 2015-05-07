@@ -24,10 +24,11 @@
 				controlNav: false,
 				directionNav: false
 			});
-			$('div a img').each(function(){
+
+			$('div.ico-menu-item a img').each(function(){
 				$(this).hover(function(){$(this).addClass("highlight");},function(){$(this).removeClass("highlight");});
 			});
-		       $(window).scroll(function (event) {
+		    $(window).scroll(function (event) {
     				var y = $(this).scrollTop();
     				if(y > 0){ $('#nav_wrap').slideUp(100); } 
     				else{ $('#nav_wrap').slideDown(100); }

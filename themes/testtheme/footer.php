@@ -5,6 +5,22 @@
 			<div class="col-xs-10 col-lg-10">
 					<a href="" class="btn-xs">an aleksandar petrovic site&nbsp&copy; 2015</a>
 			</div>
+			<div class="col-xs-2 col-lg-2">
+				<?php wp_nav_menu(
+						array( 
+							'theme_location' => 'social_menu',
+							'menu'           => 'Social Menu',
+						 	'container'      => '', 
+						 	'container_id'   => '',
+			 			 	'container_class'=> '',
+							'menu_id'        => '',
+							'menu_class'     => '',
+							'items_wrap'     => '%3$s',
+							'fallback_cb'	 => '',
+							)
+						);
+					?>
+			</div>
 	</div>
 </div>	
 

@@ -6,7 +6,7 @@
 					<a href="" class="btn-xs">an aleksandar petrovic site&nbsp&copy; 2015</a>
 			</div>
 			<div class="col-xs-2 col-lg-2">
-				<?php wp_nav_menu(
+				<?php wp_nav_menu(#needs styling and addition of images
 						array( 
 							'theme_location' => 'social_menu',
 							'menu'           => 'Social Menu',

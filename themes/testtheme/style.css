@@ -22,6 +22,9 @@ Version: 1.0
 		ul.sub-navigation-items li.cat-item, li.cat-item{list-style:none;}
 		ul.sub-navigation-items li.cat-item a, li.cat-item a{text-decoration:none;}
 		
+		/*css for latest posts on front-page.php*/
+		ul#latest-posts li{list-style: none;}
+
 		/*css for #social_navigation_footer*/
 		#social_navigation_footer ul{  }
 		#social_navigation_footer ul li { list-style:none; display: inline-block; }	

@@ -34,19 +34,19 @@
 				<div class="col-lg-12 col-xs-12">
 					<div class="row" id="grid">
 						<div class="icon-row">
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="/about/" title="~>to About Me"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-my-world.png" class="img-thumbnail img-responsive" /></a></div> 
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="/contact-form/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-mail.png" class="img-thumbnail img-responsive" /></a></div> 
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="/about/" title="~>to About Me"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-my-world.png" class="img-thumbnail img-responsive" /></a></div> 
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="/contact-form/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-mail.png" class="img-thumbnail img-responsive" /></a></div> 
 						</div>
 						<div class="icon-row">
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="/portfolio/"><img src="<?php bloginfo('template_directory');?>/images/icons/brain.png" class="img-thumbnail img-responsive" /></a></div>  
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-clock-logo.png" class="img-thumbnail img-responsive" /></a></div> 
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-google-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="/portfolio/"><img src="<?php bloginfo('template_directory');?>/images/icons/brain.png" class="img-thumbnail img-responsive" /></a></div>  
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-clock-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-google-logo.png" class="img-thumbnail img-responsive" /></a></div> 
 						</div>
 						<div class="icon-row">
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-linkedin-logo-square2.png" class="img-thumbnail img-responsive" /></a></div>  
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-instagram-logo.png" class="img-thumbnail img-responsive" /></a></div> 
-							<div class="col-md-1 col-xs-1 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-settings.png" class="img-thumbnail img-responsive" /></a></div>
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-linkedin-logo-square2.png" class="img-thumbnail img-responsive" /></a></div>  
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-instagram-logo.png" class="img-thumbnail img-responsive" /></a></div> 
+							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/"><img src="<?php bloginfo('template_directory');?>/images/icons/empty-settings.png" class="img-thumbnail img-responsive" /></a></div>
 						</div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-lg-12">
 				
-					<div id="loadedContent" class="col-xs-12 col-md-8"><!-- Content will be loaded here -->
+					<div id="loadedContent" class="col-xs-12 col-sm-8"><!-- Content will be loaded here -->
 						<?php if(have_posts()) : while(have_posts()) : the_post(); #begins the WP Loop ?>
 										<article id="post-content-<?php the_ID(); ?>" class="post-content">
 														<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>

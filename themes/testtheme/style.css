@@ -24,9 +24,9 @@ Version: 1.0
 		
 		/*css for #social_navigation_footer*/
 		#social_navigation_footer ul{  }
-		#social_navigation_footer ul li { list-style:none; }	
+		#social_navigation_footer ul li { list-style:none; display: inline-block; }	
 		#social_navigation_footer ul li a span { display:none; }
-		#social_navigation_footer ul li a img._mi { width: 2em; height: 2em; }
+		#social_navigation_footer ul li a img._mi { width: 1.7em; height: 1.7em; }
 
 		/*admin bar stuffs*/
 		.admin-bar .navbar.transparent.navbar-default.navbar-fixed-top { top: 46px; }

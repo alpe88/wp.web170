@@ -13,7 +13,7 @@
 	<meta http-equiv="Cache-Control" content="no-cache" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
 
 	<!-- Begin Style Sheets -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">

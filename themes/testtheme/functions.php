@@ -36,4 +36,5 @@ show_admin_bar(false);
 
 #custom walker include
 require_once('DD_Walker.php');
+
 ?>

@@ -26,11 +26,96 @@
 				</div>
 			</div>
 	</div>
-</div>	
+</div>
+
+<!-- NOTE: This function will currently not retrieve pages using the 'meta_key' and 'meta_value' parameters in the $args array as described below. Until this is fixed in the WordPress codebase, you may want to use get_posts() instead. -->
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+
+<!-- NOTE: This function will currently not retrieve pages using the 'meta_key' and 'meta_value' parameters in the $args array as described below. Until this is fixed in the WordPress codebase, you may want to use get_posts() instead. -->
+
+<div id="footer-menu">
+	<p>I am working on the new responsive navigation system's menu function below:</p><br>
+	<ul id="footer-menu-items">
+    <?php
+	
+	$parent = get_pages(array( 'post_type' => 'page',
+				   'post_status' => 'publish',
+				   'parent' => 0,	
+				 ));
+	
+	
+	function get_menu_classes() {
+		
+		global $post;
+	
+			
+		if( is_page($post->ID) ) {
+			if($post->post_parent){
+			 	return 'current-page-item';
+			} 
+			if(!$post->post_parent){
+				return 'current-page-parent';	
+			}
+		}		
+	}
+	$children = get_pages(array('child_of' => $post->parent,
+						));
+		
+	foreach ($parent as $post) { // foreach gateway page... 
+		echo '<li class="page-item page-item-'.$post->ID.' '.get_menu_classes().'">'; // get the list item with classes
+		echo '<a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a>'; // get the title with permalink
+			
+		if ($post->post_parent) { // if the page has a parent...
+			echo '<ul class="sub-menu">'; // get the sub-menu items
+			echo '<li class="page-item page-item-'.$children->ID.' '.get_menu_classes().'">'; // get the list item with classes
+			echo '<a href="'.get_permalink($children->ID).'">'.$children->post_title.'</a>'; // get the title with permalink echo '</li>';		
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Class:', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); 
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => $post->post_title.' &raquo; Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			echo '</ul>';
+		} else { // if the page does not have a parent...
+		
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Class:', 'meta_key' => 'navigation', 'meta_value' => 'class',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => $post->post_title.' &raquo; Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			
+		}
+		
+		echo '</li>';
+		
+	 
+	}
+
+	?>
+    </ul>
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
 
 	<!-- Begin Scripts -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
+   	<script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
    	<script src="<?php bloginfo('template_directory');?>/js/bootswatch.js"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/ajaxlinks.js"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/custom.js"></script>

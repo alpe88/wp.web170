@@ -26,7 +26,7 @@
     <h2 class="sub-navigation-title">tha! Cloud of Tags ~ yo</h2>
     <ul class="sub-navigation-items">
 		<?php wp_tag_cloud(array(
-		'smallest'                  => 1, 
+		'smallest'                  => get_smallest_count(), 
 		'largest'                   => 22,
 		'unit'                      => 'pt', 
 		'number'                    => 45,  
@@ -49,3 +49,10 @@
     
 </div>
 <!-- SideBar Ends Here -->
+
+
+<?php
+function get_smallest_count(){
+return 0;
+}
+?>

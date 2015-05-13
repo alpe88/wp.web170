@@ -23,14 +23,25 @@
     ?></ul>
     <?php endif; #end of page check ?>
     <?php if (!(is_page())) : #when not in pages ?>
-    <h2 class="sub-navigation-title">Blog</h2>
-    <ul class="sub-navigation-items"><?php wp_list_categories(array(
-								'show_option_all' =>     '',
-								'orderby'	    =>	   'name',
-								'order'	    =>	   'DESC',
-								'title_li'        =>    __(''),
-								'style'	    =>    'list'
-									)); #show categories without titles ?>
+    <h2 class="sub-navigation-title">tha! Cloud of Tags ~ yo</h2>
+    <ul class="sub-navigation-items">
+		<?php wp_tag_cloud(array(
+		'smallest'                  => 1, 
+		'largest'                   => 22,
+		'unit'                      => 'pt', 
+		'number'                    => 45,  
+		'format'                    => 'flat',
+		'separator'                 => "\n",
+		'orderby'                   => 'count', 
+		'order'                     => 'ASC',
+		'exclude'                   => null, 
+		'include'                   => null, 
+		'topic_count_text_callback' => default_topic_count_text,
+		'link'                      => 'view', 
+		'taxonomy'                  => array('post_tag','category','link_category'), 
+		'echo'                      => true,
+		'child_of'                  => null, #Note
+					)); #the cloud! ?>
     </ul>
     <?php endif; ?>
     </div>

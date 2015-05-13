@@ -36,7 +36,7 @@ show_admin_bar(false);
 #custom walker include
 require_once('DD_Walker.php');
 
-
+#filter that adds wp css classes to custom post types as appropriate
 function kct_page_css_class( $css_class, $page, $depth, $args ) {
   if ( empty($args['post_type']) || !is_singular($args['post_type']) )
     return $css_class;
@@ -54,6 +54,13 @@ function kct_page_css_class( $css_class, $page, $depth, $args ) {
 }
 add_filter( 'page_css_class', 'kct_page_css_class', 10, 4 );
 
+#filter that adds custom post types to blog page and other feeds.
+function get_custom_post_type( $query ) {
 
+if ( is_home() && $query->is_main_query() || is_feed() )
+	$query->set( 'post_type', array( 'post', 'video') );
 
+return $query;
+}
+add_filter( 'pre_get_posts', 'get_custom_post_type' );
 ?>

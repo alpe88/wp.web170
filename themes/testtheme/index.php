@@ -68,7 +68,7 @@
 																						'style'	    =>    'list'
 									)); #show categories without titles #list of categories ?></small>
 														<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'large' ); #featured image ?></a>
-														<?php the_excerpt(); #the content of the post ?>
+														<?php the_excerpt(); #the excerpt of the post ?>
 														<p class="read-more">
 															<a href="<?php the_permalink(); ?>">Read More &raquo;</a>
 														</p>

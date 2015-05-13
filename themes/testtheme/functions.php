@@ -6,7 +6,6 @@ Author URI: http://www.alna-dev.com
 Description: This is a demo theme I developed for the WEB170 class.
 Version: 1.0
 */
-
 #register menues
 register_nav_menus(array(
 	'main-menu' => __( 'Main Menu' ),
@@ -36,5 +35,25 @@ show_admin_bar(false);
 
 #custom walker include
 require_once('DD_Walker.php');
+
+
+function kct_page_css_class( $css_class, $page, $depth, $args ) {
+  if ( empty($args['post_type']) || !is_singular($args['post_type']) )
+    return $css_class;
+
+  $_current_page = get_queried_object();
+
+  if ( in_array( $page->ID, $_current_page->ancestors ) )
+    $css_class[] = 'current_page_ancestor';
+  if ( $page->ID == $_current_page->ID )
+    $css_class[] = 'current_page_item';
+  elseif ( $_current_page && $page->ID == $_current_page->post_parent )
+    $css_class[] = 'current_page_parent';
+
+  return $css_class;
+}
+add_filter( 'page_css_class', 'kct_page_css_class', 10, 4 );
+
+
 
 ?>

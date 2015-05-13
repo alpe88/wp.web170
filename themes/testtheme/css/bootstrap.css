@@ -3,6 +3,13 @@
 
 .nopadding { padding: 0 !important;margin: 0 !important; }
 
+.margin-bottom-xs {margin-bottom: 0.35714285725em;}  
+.margin-bottom-sm {margin-bottom: 0.7142857145em;} 
+.margin-bottom-md {margin-bottom: 1.428571429em;}
+.margin-bottom-lg {margin-bottom: 2.857142858em;}  
+
+
+
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */

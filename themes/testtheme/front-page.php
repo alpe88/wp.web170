@@ -29,7 +29,7 @@
 	
 	<div class="row">
 		<div class="col-xs-12">	
-			<div class="row">
+			<div class="row margin-bottom-lg">
 				<div class="col-lg-12 col-xs-12">
 				<!-- Begin Icon Navigation -->
 					<div class="row" id="grid">
@@ -52,6 +52,7 @@
 				</div>
 			</div>
 			<!-- Main Content Section Begins Here -->
+		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-lg-12">
 					<div id="loadedContent" class="col-xs-12 col-sm-8"><!-- Content will be loaded here -->
@@ -86,6 +87,7 @@
 				</div>
 			</div><small>front-page.php</small>
 		</div>
+	</div>
 </div>
 <!-- Content Ends Here -->
 

@@ -56,16 +56,16 @@
 				<div class="col-xs-12 col-lg-12">
 				
 					<div id="loadedContent" class="col-xs-12 col-sm-8"><!-- Content will be loaded here -->
-										<?php wp_get_archives(array(
-												'type'            => 'daily',
-												'limit'           => '',
-												'format'          => 'html', 
-												'before'          => '',
-												'after'           => '',
-												'show_post_count' => false,
-												'echo'            => 1,
-												'order'           => 'DESC'
-											)); ?>
+								<?php if (have_posts() ) : while ( have_posts() ) : the_post(); ?>
+									<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+														<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>
+															</small>
+														<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'large' ); #featured image ?></a>
+														<?php the_excerpt(); #the content of the post ?>
+														<p class="read-more">
+															<a href="<?php the_permalink(); ?>">Read More &raquo;</a>
+														</p>
+								<?php endwhile; else: endif; ?>
 					</div>
 					<div id="sidebar" class="col-sm-4 hidden-xs"><!-- Sidebar will be loaded here -->
 						<?php get_sidebar(); ?>

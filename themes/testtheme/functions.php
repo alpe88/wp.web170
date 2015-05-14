@@ -55,12 +55,33 @@ function kct_page_css_class( $css_class, $page, $depth, $args ) {
 add_filter( 'page_css_class', 'kct_page_css_class', 10, 4 );
 
 #filter that adds custom post types to blog page and other feeds.
-function get_custom_post_type( $query ) {
-
+function get_custom_post_type($query){
 if ( is_home() && $query->is_main_query() || is_feed() )
 	$query->set( 'post_type', array( 'post', 'video') );
-
 return $query;
 }
 add_filter( 'pre_get_posts', 'get_custom_post_type' );
+
+#filter that adds custom post types to category and tag pages.
+function query_post_type($query) {
+  if(is_category() || is_tag()) {
+    $post_type = get_query_var('post_type');
+	if($post_type)
+	    $post_type = $post_type;
+	else
+	    $post_type = array('post','video');
+    $query->set('post_type',$post_type);
+	return $query;
+    }
+}
+add_filter('pre_get_posts', 'query_post_type');
+
+#custom tag cloud tool tip function
+function custom_tooltip_callback($count){
+    return sprintf( 
+        _n('%s Topic.', '%s Topics.', $count),
+        number_format_i18n($count)
+    );
+}
+
 ?>

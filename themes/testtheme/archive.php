@@ -57,7 +57,7 @@
 				
 					<div id="loadedContent" class="col-xs-12 col-sm-8"><!-- Content will be loaded here -->
 										<?php wp_get_archives(array(
-												'type'            => 'daily',
+												'type'            => 'alpha',
 												'limit'           => '',
 												'format'          => 'html', 
 												'before'          => '',
@@ -65,7 +65,8 @@
 												'show_post_count' => false,
 												'echo'            => 1,
 												'order'           => 'DESC'
-											)); ?>
+											));?>
+					</div>
 					</div>
 					<div id="sidebar" class="col-sm-4 hidden-xs"><!-- Sidebar will be loaded here -->
 						<?php get_sidebar(); ?>

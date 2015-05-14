@@ -69,7 +69,11 @@
 								<!-- Loop Two: -->
 								<section class="widget-item col-xs-6">
 									<?php rewind_posts(); #this function stops the first loop in order to prevent a functional error - aka an infinite loop :[] ?>
-									<?php query_posts('showposts=5'); #this instructs the second loop - how many posts to pull from the blog ?>
+									<?php query_posts(array( 
+												'post_type' => array('post', 'video'),
+												'showposts' => 5,
+												 )); #this instructs the second loop - how many posts to pull from the blog ?>
+										
 										<ul id="latest-posts">
 											<?php while (have_posts()) : the_post(); #the secound loop starts here ?>
 												<li><a href="<?php the_post_thumbnail( 'thumbnail' ); #featured image ?><?php the_permalink(); ?>"><?php the_title(); ?></a></li>

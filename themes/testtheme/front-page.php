@@ -29,7 +29,7 @@
 	
 	<div class="row">
 		<div class="col-xs-12">	
-			<div class="row margin-bottom-lg">
+			<div class="row margin-bottom-md">
 				<div class="col-lg-12 col-xs-12">
 				<!-- Begin Icon Navigation -->
 					<div class="row" id="grid">
@@ -72,7 +72,7 @@
 									<?php query_posts('showposts=5'); #this instructs the second loop - how many posts to pull from the blog ?>
 										<ul id="latest-posts">
 											<?php while (have_posts()) : the_post(); #the secound loop starts here ?>
-												<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+												<li><a href="<?php the_post_thumbnail( 'thumbnail' ); #featured image ?><?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 											<?php endwhile; #end of secound loop ?>
 										</ul>
 								</section>

@@ -29,7 +29,7 @@
 	
 	<div class="row">
 		<div class="col-xs-12">	
-			<div class="row margin-bottom-lg">
+			<div class="row margin-bottom-md">
 				<div class="col-lg-12 col-xs-12">
 				<!-- Begin Icon Navigation -->
 					<div class="row" id="grid">
@@ -56,16 +56,18 @@
 				<div class="col-xs-12 col-lg-12">
 				
 					<div id="loadedContent" class="col-xs-12 col-sm-8"><!-- Content will be loaded here -->
-								<?php if (have_posts() ) : while ( have_posts() ) : the_post(); ?>
-									<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
-														<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>
-															</small>
-														<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'large' ); #featured image ?></a>
-														<?php the_excerpt(); #the content of the post ?>
-														<p class="read-more">
-															<a href="<?php the_permalink(); ?>">Read More &raquo;</a>
-														</p>
-								<?php endwhile; else: endif; ?>
+								<?php if(have_posts()) : while(have_posts()) : the_post(); #begins the WP Loop ?>
+										<article id="post-content-<?php the_ID(); ?>" class="post-content">
+										<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+										<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>
+										in <?php the_category(' '); #list of categories ?></small>
+										<a href="<?php the_permalink(); #link ?>"><?php the_post_thumbnail( 'thumbnail' ); #featured image ?></a>
+										<?php the_excerpt(); #the excerpt of the post ?>
+										<p class="read-more">
+											<a href="<?php the_permalink(); ?>">Read More &raquo;</a>
+										</p>
+										</article> 
+						<?php endwhile; endif; #end of The Loop ?>
 					</div>
 					<div id="sidebar" class="col-sm-4 hidden-xs"><!-- Sidebar will be loaded here -->
 						<?php get_sidebar(); ?>

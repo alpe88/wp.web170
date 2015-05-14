@@ -27,11 +27,11 @@
 		<h1 class="col-xs-12">~~>a humbly amazing portfolio</h1>
   	</div>
 	
-	<!-- Begin Icon Navigation -->
 	<div class="row">
 		<div class="col-xs-12">	
-			<div class="row">
+			<div class="row margin-bottom-md">
 				<div class="col-lg-12 col-xs-12">
+				<!-- Begin Icon Navigation -->
 					<div class="row" id="grid">
 						<div class="icon-row">
 							<div class="col-sm-1 col-xs-4 ico-menu-item"><a class="" href="../wordpress/" title="~>back to Home"><img src="<?php bloginfo('template_directory');?>/images/icons/back-button.png" class="img-thumbnail img-responsive" /></a></div>  

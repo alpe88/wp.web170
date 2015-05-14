@@ -29,7 +29,7 @@
 	
 	<div class="row">
 		<div class="col-xs-12">	
-			<div class="row margin-bottom-lg">
+			<div class="row margin-bottom-md">
 				<div class="col-lg-12 col-xs-12">
 				<!-- Begin Icon Navigation -->
 					<div class="row" id="grid">

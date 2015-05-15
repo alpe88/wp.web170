@@ -85,34 +85,24 @@ function custom_tooltip_callback($count){
 }
 
 #custom flexslider ala mike sinkula - #genius
-<?php
-
-function add_flexslider() { #display attachment images as a flexslider gallery on single posting
-    
+function add_flexslider() {    
     $attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
     
-    if ($attachments) { // if there are images attached to posting, start the flexslider markup
-        
+    if ($attachments) {        
         echo '<div class="flexslider">';
         echo '<ul class="slides">';
     
-        foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
-        
-            echo '<li>';
+        foreach ($attachments as $attachment_id => $attachment) {            echo '<li>';
             echo wp_get_attachment_image($attachment_id, 'large');
             echo '<p>';
             echo get_post_field('post_excerpt', $attachment->ID);
             echo '</p>';
             echo '</li>';
-            
         }
-    
         echo '</ul>';
         echo '</div>';
-        
-    } // end see if images
-    
-} // end add flexslider
+    }
+}
 add_shortcode( 'flexslider', 'add_flexslider' );
-?>
+
 ?>

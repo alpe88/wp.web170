@@ -76,7 +76,10 @@
 										
 										<ul id="latest-posts">
 											<?php while (have_posts()) : the_post(); #the secound loop starts here ?>
-												<li><a href="<?php the_post_thumbnail( 'thumbnail' ); #featured image ?><?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+											<div class="row">
+												<li><div class="col-xs-4 nopadding"><?php the_post_thumbnail('thumbnail',array('class' => "img-responsive center-block")); #featured image ?></div>
+													<div class="col-xs-8 nopadding"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div></li>
+											</div>
 											<?php endwhile; #end of secound loop ?>
 										</ul>
 								</section>

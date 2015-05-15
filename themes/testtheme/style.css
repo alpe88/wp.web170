@@ -17,6 +17,7 @@ Version: 1.0
 		.transparent {background:rgba(0,0,0,0.1) !important; background: rgb (0,0,0) !important;}
 		.ico-row-style{width:70%; margin:0 auto;}
 		#grid{ border-bottom:2px solid white; }
+		#latest-posts li img { width:50%;height:50%;}
 		/* css for categories */
 		small li.cat-item, ul.sub-navigation-items{display: inline-block;}
 		ul.sub-navigation-items li.cat-item, li.cat-item{list-style:none;}

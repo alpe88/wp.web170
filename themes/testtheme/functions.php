@@ -37,7 +37,7 @@ show_admin_bar(false);
 require_once('DD_Walker.php');
 
 #filter that adds wp css classes to custom post types as appropriate
-function kct_page_css_class( $css_class, $page, $depth, $args ) {
+function add_page_css_class( $css_class, $page, $depth, $args ) {
   if ( empty($args['post_type']) || !is_singular($args['post_type']) )
     return $css_class;
 
@@ -52,19 +52,20 @@ function kct_page_css_class( $css_class, $page, $depth, $args ) {
 
   return $css_class;
 }
-add_filter( 'page_css_class', 'kct_page_css_class', 10, 4 );
+add_filter( 'page_css_class', 'add_page_css_class', 10, 4 );
 
+/*
 #filter that adds custom post types to blog page and other feeds.
-function get_custom_post_type($query){
+function set_custom_post_type($query){
 if ( is_home() && $query->is_main_query() || is_feed() )
 	$query->set( 'post_type', array( 'post', 'video') );
 return $query;
 }
-add_filter( 'pre_get_posts', 'get_custom_post_type' );
+add_filter( 'pre_get_posts', 'set_custom_post_type' );*/
 
 #filter that adds custom post types to category and tag pages.
-function query_post_type($query) {
-  if(is_category() || is_tag()) {
+function set_query_post_type($query) {
+  if(is_home() && $query->is_main_query() || is_feed() || is_category() || is_tag()) {
     $post_type = get_query_var('post_type');
 	if($post_type)
 	    $post_type = $post_type;
@@ -74,7 +75,7 @@ function query_post_type($query) {
 	return $query;
     }
 }
-add_filter('pre_get_posts', 'query_post_type');
+add_filter('pre_get_posts', 'set_query_post_type');
 
 #custom tag cloud tool tip function
 function custom_tooltip_callback($count){

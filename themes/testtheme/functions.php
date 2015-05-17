@@ -54,16 +54,7 @@ function add_page_css_class( $css_class, $page, $depth, $args ) {
 }
 add_filter( 'page_css_class', 'add_page_css_class', 10, 4 );
 
-/*
-#filter that adds custom post types to blog page and other feeds.
-function set_custom_post_type($query){
-if ( is_home() && $query->is_main_query() || is_feed() )
-	$query->set( 'post_type', array( 'post', 'video') );
-return $query;
-}
-add_filter( 'pre_get_posts', 'set_custom_post_type' );*/
-
-#filter that adds custom post types to category and tag pages.
+#filter that adds custom post types to pages.
 function set_query_post_type($query) {
   if(is_home() && $query->is_main_query() || is_feed() || is_category() || is_tag()) {
     $post_type = get_query_var('post_type');

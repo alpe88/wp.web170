@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <!-- header.php Ends Here -->
-
+<?php
+          setPostViews(get_the_ID()); #for counting of post views.
+?>
 <!-- Content -->
 <div class="nopadding jumbotron">
 	<div id="" class="flexslider" style="margin-top:2em;">
@@ -71,6 +73,7 @@
 														<?php the_content(); #the content of the post ?>
 														<p class="read-more">
 															<a href="/blog/">Back to Blog</a>
+															<?php echo getPostViews(get_the_ID());?>
 														</p>
 										</article> 
 						<?php endwhile; endif; #end of The Loop ?>

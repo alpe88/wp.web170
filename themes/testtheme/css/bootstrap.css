@@ -1,8 +1,6 @@
-* { margin:0;padding:0; }
 /*Custom CSS*/
-
+* { margin:0;padding:0; }
 .nopadding { padding: 0 !important;margin: 0 !important; }
-
 .margin-bottom-xs {margin-bottom: 0.35714285725em;}  
 .margin-bottom-sm {margin-bottom: 0.7142857145em;} 
 .margin-bottom-md {margin-bottom: 1.428571429em;}

@@ -1,26 +1,12 @@
 <?php get_header(); ?>
 <!-- header.php Ends Here -->
 
-<!-- Content -->
-<div class="nopadding jumbotron">
-	<div id="" class="flexslider" style="margin-top:2em;">
-		<ul class="slides">
-			<li>
-				<img src="<?php bloginfo('template_directory');?>/images/slideOne.png" />
-				<span class="text-overlay flex-caption"~~>spanning vast distances...</span>
-			</li>
-			<li>
-				<img src="<?php bloginfo('template_directory');?>/images/slideTwo.png" />
-				<span class="text-overlay flex-caption">~~>with grand horizons...</span>
-			</li>
-			<li>
-				<img src="<?php bloginfo('template_directory');?>/images/slideThree.png" />
-				<span class="text-overlay flex-caption">~~>on my super sayan s#!7.</span>
-			</li>
-		</ul>
+<!-- Content Begins Here -->
+<div style="margin-top:3em;">
+	<div class="nopadding jumbotron">
+		<?php add_flexslider(); ?>
 	</div>
 </div>
-
 <div class="container">
 
     <div class="row">

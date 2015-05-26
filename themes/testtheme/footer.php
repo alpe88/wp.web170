@@ -46,9 +46,6 @@
 				directionNav: false
 			});
 
-			$('div.ico-menu-item a img').each(function(){
-				$(this).hover(function(){$(this).addClass("highlight");},function(){$(this).removeClass("highlight");});
-			});
 		});
 	</script>
 <?php wp_footer(); ?>

@@ -66,6 +66,7 @@
 														</div>
 														<div class="col-xs-9 nopadding">
 															<h2><a href="<?php the_permalink(); #link to post ?>"><?php the_title(); #title ?></a></h2>
+															<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
 														</div>
 														</div>
 														<small>Posted on <?php the_time('F j, Y'); #time item posted on ?> by <?php the_author(); #post author ?>

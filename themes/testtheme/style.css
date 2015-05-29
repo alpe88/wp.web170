@@ -8,6 +8,9 @@ Author URI: http://www.alna-dev.com
 Description: This is a demo theme I developed for the WEB170 class.
 Version: 1.0
 */
+		.widget ul{list-style:none;}
+		.widget ul li a:hover{color: white;}
+		#coolQuote{color:white;font-weight:bold;font-size:3em;}
 		.post-content p{margin: 5px 0 10px;}
 		.post-content small{border-bottom:1px solid red;}
 		.text-overlay{position:absolute;top:50%;left:0;color:#000;font: bold 20px/37px Centaur, Sans-Serif;letter-spacing: -1px;  background: rgb(255, 255, 255); /* fallback color */background: rgba(255, 255, 255, 0.7);padding: 10px;border: 2px solid #000;}

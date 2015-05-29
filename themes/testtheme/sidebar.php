@@ -4,6 +4,12 @@
     <!-- Begin Sub-Navigation -->
     <div id="sub-navigation" class="widget">
     <?php if(is_page()) : #when in pages ?>
+	<?php if(get_post_meta($post->ID, 'quote', true)){
+		?>
+		<div id="coolQuote"><blockquote>
+			<?php echo get_post_meta($post->ID,'quote',true);?>
+		</blockquote></div>	
+<?php } ?>
     <h2 class="sub-navigation-title">
     <?php echo get_the_title($post->post_parent); #get the title of the page ?></h2>
     <ul class="sub-navigation-items"><?php 
@@ -43,10 +49,14 @@
 		'child_of'                  => null, #Note
 					)); #the cloud! ?>
     </ul>
+	
     <?php endif; ?>
+
+    <!-- Begin Dynamic Sidebar -->
+    <?php dynamic_sidebar(1); ?>
+
     </div>
     <!-- End Sub-Navigation -->
-    
 </div>
 <!-- SideBar Ends Here -->
 
